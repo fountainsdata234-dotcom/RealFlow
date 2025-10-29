@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealFlow - Your Digital Library</title>
+    <meta name="description" content="RealFlow - Access countless books with your personal library, reading history, and favorites">
+    <meta name="keywords" content="books, online library, reading, digital books, realflow">
+    <meta property="og:title" content="RealFlow - Your Digital Library">
+    <meta property="og:description" content="Access countless books with your personal library">
+    <meta name="twitter:title" content="RealFlow - Your Digital Library">
+    <meta name="twitter:description" content="Access countless books with your personal library">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M20 10 H 80 V 90 H 20 Z M 20 10 Q 10 50 20 90%22 fill=%22%232563eb%22 stroke=%22white%22 stroke-width=%225%22/><text x=%2250%22 y=%2260%22 font-family=%22serif%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 font-style=%22italic%22>SW</text></svg>">
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f59e0b;
+            --text-primary: #1f2937; /* Reverted to dark text */
+            --text-secondary: #6b7280; /* Reverted to dark text */
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply px-6 py-3 bg-[var(--primary-color)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity;
+        }
+        .btn-secondary {
+            @apply px-6 py-3 bg-white text-[var(--primary-color)] border-2 border-[var(--primary-color)] rounded-lg font-medium hover:bg-[var(--primary-color)] hover:text-white transition-all;
+        }
+    }
+    </style>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="bg-slate-900">
+    <div id="particles-container" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+    <div id="root"></div>
+    <script type="text/babel" src="utils/firebase.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/Features.js"></script>
+    <script type="text/babel" src="components/BookGrid.js"></script>
+    <script type="text/babel" src="components/AboutContent.js"></script>
+    <script type="text/babel" src="components/ContactForm.js"></script>
+    <script type="text/babel" src="components/Features.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="components/AppRouter.js"></script>
+    <script type="text/babel" src="app.js"></script>
+    <script>
+        tsParticles.load("particles-container", {
+            fpsLimit: 60,
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 2, random: true, anim: { enable: false } },
+                line_linked: { enable: false },
+                move: {
+                    enable: true,
+                    speed: 0.5,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                },
+            },
+            interactivity: { detect_on: "canvas", events: { onhover: { enable: false }, onclick: { enable: false } } },
+            detectRetina: true,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "RealFlow",
+  "short_name": "RealFlow",
+  "description": "A professional book reading website with Firebase authentication, allowing users to access and read countless books.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#1e293b",
+  "icons": [
+    {
+      "src": "https://resource.trickle.so/img/trickle-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://resource.trickle.so/img/trickle-app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
